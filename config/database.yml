@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: dbuser
+  password: password
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: tsubasa-yoshida_development
+
+test:
+  <<: *default
+  database: tsubasa-yoshida_test
+
+production:
+  <<: *default
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
