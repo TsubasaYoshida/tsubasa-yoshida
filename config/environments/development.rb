@@ -21,8 +21,6 @@ Rails.application.configure do
 
   config.active_storage.service = :local
 
-  config.action_mailer.raise_delivery_errors = false
-
   config.action_mailer.perform_caching = false
 
   config.active_support.deprecation = :log
@@ -37,5 +35,25 @@ Rails.application.configure do
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  # コメントアウトすることでdevelop環境からもメールを送信する設定になる
+  # config.action_mailer.raise_delivery_errors = false
+
+  # smtpで実際にメール送信させるのではなく、letter_openerというgemを用いてテストする
+  # config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :letter_opener
+
+  # メールテンプレートはviewと違ってURLヘルパーを使ってもドメインが取得できず、メール本文にURLを載せられないので、その対策をする
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+
+  config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address => 'smtp.gmail.com',
+      :port => 587,
+      :domain => 'gmail.com',
+      :authentication => :plain,
+      # 本当に飛ばす場合(letter_openerを使わない場合)は、Gmailのメールアドレスが必要
+      :user_name => '',
+      # 本当に飛ばす場合(letter_openerを使わない場合)は、Gmailのアプリパスワードが必要
+      :password => ''
+  }
 end
