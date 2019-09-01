@@ -52,8 +52,8 @@ Rails.application.configure do
       :domain => 'gmail.com',
       :authentication => :plain,
       # 本当に飛ばす場合(letter_openerを使わない場合)は、Gmailのメールアドレスが必要
-      :user_name => '',
+      :user_name => Rails.application.credentials.gmail[:mail_address],
       # 本当に飛ばす場合(letter_openerを使わない場合)は、Gmailのアプリパスワードが必要
-      :password => ''
+      :password => Rails.application.credentials.gmail[:app_password]
   }
 end
