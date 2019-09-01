@@ -4,7 +4,7 @@ class NoticeMailer < ApplicationMailer
 
   def sendmail_contact(contact)
     @contact = contact
-    mail to: "tsubasayoshida0624@gmail.com",
+    mail to: Rails.application.credentials.admin[:mail_address],
          subject: "お問い合わせが届きました"
   end
 
