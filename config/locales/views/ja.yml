@@ -1,0 +1,22 @@
+ja:
+  helpers:
+    submit:
+      create: '登録する'
+      update: '更新する'
+      submit: '保存する'
+  simple_form:
+    labels:
+      contact:
+        company: '貴社名'
+        name: 'お名前'
+        email: 'メールアドレス'
+        telephone: '電話番号'
+        message: 'お問い合わせ内容'
+    hints:
+      contact:
+        email: '入力いただいたメールアドレスに返信致します'
+        telephone: 'ハイフンの有無は問いません'
+    placeholders:
+      contact:
+    required:
+      html: '<span class="badge badge-danger">必須</span>'

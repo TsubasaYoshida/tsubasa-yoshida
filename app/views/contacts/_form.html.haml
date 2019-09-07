@@ -1,25 +1,7 @@
-= form_for @contact do |f|
-  - if @contact.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@contact.errors.count, "error")} prohibited this contact from being saved:"
-      %ul
-        - @contact.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :company
-    = f.text_field :company
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :telephone
-    = f.text_field :telephone
-  .field
-    = f.label :message
-    = f.text_area :message
-  .actions
-    = f.submit 'Save', data: { confirm: 'この内容で送信してもよろしいですか？' }
+= simple_form_for @contact do |f|
+  = f.input :company
+  = f.input :name
+  = f.input :email
+  = f.input :telephone
+  = f.input :message
+  = f.button :submit, '送信する', class: 'page-link text-dark d-inline-block', data: { confirm: 'この内容で送信してもよろしいですか？' }

@@ -1,7 +1,9 @@
-%p#notice= notice
+.container
 
-%h1 New contact
+  %h1.text-center contact
 
-= render 'form'
+  - if notice
+    .alert.alert-success.my-4{role: "alert"}
+      = notice
 
-= link_to 'もどる', :back
+  = render 'form'
