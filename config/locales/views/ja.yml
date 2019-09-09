@@ -15,7 +15,7 @@ ja:
     hints:
       contact:
         email: '入力いただいたメールアドレスに返信致します'
-        telephone: 'ハイフンの有無は問いません'
+        telephone: 'ハイフン無しでご入力ください'
     placeholders:
       contact:
     required:
