@@ -3,6 +3,8 @@ class Contact < ApplicationRecord
   VALID_PHONE_REGEX = /\A\d{10}\z|\A\d{11}\z/
   validates :name, :email, :telephone, :message,
             presence: true
+  validates :company, :name, :email,
+            length: {maximum: 255}, allow_blank: true
   validates :email,
             format: {with: VALID_EMAIL_REGEX}, allow_blank: true
   validates :telephone,
