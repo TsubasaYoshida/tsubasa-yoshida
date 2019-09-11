@@ -28,7 +28,15 @@ module TsubasaYoshida
       g.assets false
       g.helper false
       g.jbuilder false
-      g.test_framework false
+      g.test_framework :rspec,
+                       # テストデータベースにレコードを作成するファイルの作成をスキップ
+                       fixtures: false,
+                       # ビュースペックの作成をスキップ(UIのテストはフィーチャスペックに任せる)
+                       view_specs: false,
+                       # ヘルパースペックの作成をスキップ
+                       helper_specs: false,
+                       # ルーティングスペックの作成をスキップ
+                       routing_specs: false
     end
   end
 end
