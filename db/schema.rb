@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_25_130335) do
+ActiveRecord::Schema.define(version: 2019_09_15_061939) do
+
+  create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blogs_categories", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "blog_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["blog_id"], name: "index_blogs_categories_on_blog_id"
+    t.index ["category_id"], name: "index_blogs_categories_on_category_id"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company"
@@ -22,4 +42,6 @@ ActiveRecord::Schema.define(version: 2019_08_25_130335) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "blogs_categories", "blogs"
+  add_foreign_key "blogs_categories", "categories"
 end
