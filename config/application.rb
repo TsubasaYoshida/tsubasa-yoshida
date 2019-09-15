@@ -36,7 +36,11 @@ module TsubasaYoshida
                        # ヘルパースペックの作成をスキップ
                        helper_specs: false,
                        # ルーティングスペックの作成をスキップ
-                       routing_specs: false
+                       routing_specs: false,
+                       # コントローラースペックの作成をスキップ
+                       controller_specs: false,
+                       # リクエストスペックの作成をスキップ
+                       request_specs: false
     end
   end
 end
