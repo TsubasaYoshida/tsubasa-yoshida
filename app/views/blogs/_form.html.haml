@@ -1,5 +1,7 @@
 = simple_form_for(@blog) do |f|
   = f.input :title
-  = f.input :body
-  = f.association :categories, as: :check_boxes
+  .blog-textarea
+    = f.input :body
+  = f.association :categories, as: :check_boxes, label: 'カテゴリ'
+  = f.input :created_at, html5: true
   = f.button :submit, class: 'page-link text-dark d-inline-block'

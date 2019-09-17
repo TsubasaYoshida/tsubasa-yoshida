@@ -2,6 +2,8 @@ ja:
   activerecord:
     models:
       contact: お問い合わせ情報
+      blog: ブログ記事
+      category: カテゴリ
     attributes:
       contact:
         company: 貴社名
@@ -9,3 +11,9 @@ ja:
         email: メールアドレス
         telephone: 電話番号
         message: お問い合わせ内容
+      blog:
+        title: タイトル
+        body: 本文
+        created_at: 投稿日時
+      category:
+        name: カテゴリ名

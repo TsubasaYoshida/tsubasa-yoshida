@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories, only: [:index, :new, :edit, :create, :update, :destroy]
   resources :blogs
   resources :contacts, only: [:create, :new]
   get 'contact', to: 'contacts#new'

@@ -1,23 +1,20 @@
-%h1 Listing blogs
+.container
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Body
-      %th
-      %th
-      %th
+  %h1 blog
 
-  %tbody
-    - @blogs.each do |blog|
-      %tr
-        %td= blog.title
-        %td= blog.body
-        %td= link_to 'Show', blog
-        %td= link_to 'Edit', edit_blog_path(blog)
-        %td= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }
+  - if @category
+    .mt-3
+      = "category: #{@category.name}"
 
-%br
-
-= link_to 'New Blog', new_blog_path
+  - @blogs.each do |blog|
+    .text-center.mt-5
+      %time
+        = l blog.created_at
+      %h2.mt-2
+        = link_to blog.title, blog
+      .mt-3
+        - blog.categories.each do |category|
+          .category.ml-1.px-1
+            = link_to category.name, blogs_path(category: category.id)
+    .mt-4
+      = simple_format blog.body

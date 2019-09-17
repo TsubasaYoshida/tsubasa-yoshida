@@ -1,21 +1,17 @@
-%h1 Listing categories
+.container
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
+  %h1.mb-4.float-left カテゴリ
 
-  %tbody
-    - @categories.each do |category|
-      %tr
-        %td= category.name
-        %td= link_to 'Show', category
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+  .float-right.mt-3
+    = link_to '作成', new_category_path, class: 'page-link text-dark d-inline-block'
 
-%br
-
-= link_to 'New Category', new_category_path
+  %table.table.table-sm.table-bordered.text-center
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td.font-weight-bold{style: 'border: 2px solid'}
+            = category.name
+          %td.cell-link
+            = link_to '編集', edit_category_path(category)
+          %td.cell-link
+            = link_to '削除', category, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }
