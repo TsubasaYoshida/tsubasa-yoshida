@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :contacts, only: [:create, :new]
   get 'contact', to: 'contacts#new'
   get 'static_pages/home'
+  get '/admin/login', to: 'sessions#new'
+  post '/admin/login', to: 'sessions#create'
 
   root to: 'static_pages#home'
 end

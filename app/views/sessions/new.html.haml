@@ -1,0 +1,12 @@
+.container
+
+  %h1 login
+
+  - if notice
+    .alert.alert-danger.my-4{role: "alert"}
+      = notice
+
+  = simple_form_for :session, action: :create do |f|
+    = f.input :email
+    = f.input :password
+    = f.button :submit, 'ログイン', class: 'page-link text-dark d-inline-block'

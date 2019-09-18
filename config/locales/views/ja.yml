@@ -12,6 +12,9 @@ ja:
         email: 'メールアドレス'
         telephone: '電話番号'
         message: 'お問い合わせ内容'
+      session:
+        email: 'メールアドレス'
+        password: 'パスワード'
     hints:
       contact:
         email: '入力いただいたメールアドレスに返信致します'

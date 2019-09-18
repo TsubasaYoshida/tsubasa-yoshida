@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  skip_before_action :check_logined
 
   def new
     @contact = Contact.new
