@@ -2,9 +2,9 @@
 
   %h1 login
 
-  - if notice
+  - if flash[:danger]
     .alert.alert-danger.my-4{role: "alert"}
-      = notice
+      = flash[:danger]
 
   = simple_form_for :session, action: :create do |f|
     = f.input :email
