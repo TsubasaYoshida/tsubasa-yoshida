@@ -6,7 +6,8 @@
     .alert.alert-danger.my-4{role: "alert"}
       = flash[:danger]
 
-  = simple_form_for :session, action: :create do |f|
-    = f.input :email
-    = f.input :password
-    = f.button :submit, 'ログイン', class: 'page-link text-dark d-inline-block'
+  .my-4
+    = simple_form_for :session, action: :create do |f|
+      = f.input :email, label: false
+      = f.input :password, label: false
+      = f.button :submit, 'ログイン', class: 'page-link text-dark d-inline-block'

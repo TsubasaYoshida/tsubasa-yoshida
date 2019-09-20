@@ -12,14 +12,13 @@ ja:
         email: 'メールアドレス'
         telephone: '電話番号'
         message: 'お問い合わせ内容'
-      session:
-        email: 'メールアドレス'
-        password: 'パスワード'
     hints:
       contact:
         email: '入力いただいたメールアドレスに返信致します'
         telephone: 'ハイフン無しでご入力ください'
     placeholders:
-      contact:
+      session:
+        email: 'メールアドレス'
+        password: 'パスワード'
     required:
       html: '<span class="badge badge-danger">必須</span>'
