@@ -1,0 +1,34 @@
+.container
+
+  %h1.mb-4.float-left 記事管理
+
+  .float-right.mt-3
+    = link_to '作成', new_blog_path, class: 'page-link text-dark d-inline-block'
+
+  .clearfix
+
+  - if notice
+    .alert.alert-success.mb-4.mt-3{role: "alert"}
+      = notice
+
+  %table.table.table-striped.table-sm.table-bordered
+    %thead
+      %tr
+        %th タイトル
+        %th タグ
+        %th 投稿日時
+        %th{colspan: 2}
+    %tbody
+      - @blogs.each do |blog|
+        %tr
+          %td
+            = link_to blog.title, blog
+          %td
+            - blog.categories.each do |category|
+              = link_to category.name, blogs_path(category: category.id)
+          %td
+            = l blog.created_at
+          %td.cell-link.text-center
+            = link_to '編集', edit_blog_path(blog)
+          %td.cell-link.text-center
+            = link_to '削除', blog, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }

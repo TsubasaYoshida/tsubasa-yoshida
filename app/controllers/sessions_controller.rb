@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(session_params[:password])
       reset_session
       session[:user_id] = user.id
-      redirect_to blogs_url, notice: 'ログインしました。'
+      redirect_to management_blogs_url, notice: 'ログインしました。'
     else
       flash.now[:danger] = '入力値が誤っています。'
       render :new

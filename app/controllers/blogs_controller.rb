@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to @blog, notice: 'ブログ記事の作成に成功しました。'
+      redirect_to management_blogs_url, notice: 'ブログ記事の作成に成功しました。'
     else
       render :new
     end
@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      redirect_to @blog, notice: 'ブログ記事の更新に成功しました。'
+      redirect_to management_blogs_url, notice: 'ブログ記事の更新に成功しました。'
     else
       render :edit
     end
@@ -40,7 +40,11 @@ class BlogsController < ApplicationController
 
   def destroy
     @blog.destroy
-    redirect_to blogs_url, notice: 'ブログ記事の削除に成功しました。'
+    redirect_to management_blogs_url, notice: 'ブログ記事の削除に成功しました。'
+  end
+
+  def management
+    @blogs = Blog.all.order(created_at: :desc)
   end
 
   private
