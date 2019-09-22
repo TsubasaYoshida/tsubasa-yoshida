@@ -1,5 +1,30 @@
 .container
-  %p.mb-0.font-24px
+  %h1.mb-0.font-24px
     \# Welcome to my website.
   %p.ml-2
     \- I am a professional programmer.
+
+  .my-4
+
+  %h2.font-22px
+    = link_to '## blog', blogs_path
+
+  .my-3
+
+  .row
+    - @blogs.each do |blog|
+      .col-sm-4
+        .card.mb-4
+          = link_to blog do
+            .card-body
+              .card-title.font-18px
+                = blog.title
+              %p.card-text
+                = truncate blog.body, length: 100, separator: '。', omission: ' …'
+
+  .my-4
+
+  %h2.font-22px
+    = link_to '## work'
+
+  .my-3
