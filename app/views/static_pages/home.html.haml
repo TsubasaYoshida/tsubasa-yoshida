@@ -17,7 +17,7 @@
         .card.mb-4
           = link_to blog do
             .card-body
-              .card-title.font-18px
+              .card-title.font-18px.font-weight-bold
                 = blog.title
               %p.card-text
                 = truncate blog.body, length: 100, omission: ' …'
