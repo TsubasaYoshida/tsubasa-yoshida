@@ -17,4 +17,4 @@
           .category.ml-1.px-1
             = link_to category.name, blogs_path(category: category.id)
     .mt-4
-      = simple_format blog.body
+      = markdown blog.body
