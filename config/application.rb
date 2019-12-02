@@ -19,8 +19,7 @@ Bundler.require(*Rails.groups)
 
 module TsubasaYoshida
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.paths.add 'lib', eager_load: true
     config.load_defaults 5.2
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
