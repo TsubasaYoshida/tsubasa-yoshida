@@ -2,14 +2,15 @@
 
   %h1 blog
 
-  .text-center.mt-4
-    %time
-      = l @blog.created_at
-    %h2.mt-2
-      = @blog.title
-    .mt-3
-      - @blog.categories.each do |category|
-        .category.ml-1.px-1
-          = link_to category.name, blogs_path(category: category.id)
-  .mt-4
-    = markdown @blog.body
+  .article
+    .text-center.mt-4
+      %time
+        = l @blog.created_at
+      %h2.mt-2
+        = @blog.title
+      .mt-3
+        - @blog.categories.each do |category|
+          .category.ml-1.px-1
+            = link_to category.name, blogs_path(category: category.id)
+    .mt-4
+      = markdown @blog.body
