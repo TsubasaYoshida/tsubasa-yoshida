@@ -66,7 +66,9 @@ pre {
 
 .article h3 {
   margin-top: 2em;
-  padding: 0 0.4em;
+  margin-bottom: 1em;
+  padding-bottom: .1em;
   font-size: 1.5rem;
-  border-left: solid 5px #212529;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
 }
