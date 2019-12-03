@@ -7,14 +7,15 @@
       = "category: #{@category.name}"
 
   - @blogs.each do |blog|
-    .text-center.mt-5
-      %time
-        = l blog.created_at
-      %h2.mt-2
-        = link_to blog.title, blog
-      .mt-3
-        - blog.categories.each do |category|
-          .category.ml-1.px-1
-            = link_to category.name, blogs_path(category: category.id)
-    .mt-4
-      = markdown blog.body
+    .article
+      .text-center.mt-5
+        %time
+          = l blog.created_at
+        %h2.mt-2
+          = link_to blog.title, blog
+        .mt-3
+          - blog.categories.each do |category|
+            .category.ml-1.px-1
+              = link_to category.name, blogs_path(category: category.id)
+      .mt-4
+        = markdown blog.body
