@@ -80,3 +80,12 @@ pre {
   font-size: 1.3rem;
   border-bottom: 1px solid #ddd;
 }
+
+.filename {
+  display: inline-block;
+  background-color: #272822;
+  color: #FFF;
+  font-size: 14px;
+  vertical-align: bottom;
+  padding: 5px 10px;
+}
