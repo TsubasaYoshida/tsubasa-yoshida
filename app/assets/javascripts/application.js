@@ -19,8 +19,6 @@
 //= require bootstrap-sprockets
 
 $(function(){
-  console.log($("p:contains('===')"));
-
   var filename = $("p:contains('===')").text().replace('===', '');
   $("p:contains('===')").replaceWith('<span class="filename">' + filename + '</span>');
 });
