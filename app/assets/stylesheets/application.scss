@@ -82,10 +82,10 @@ pre {
 }
 
 .filename {
+  font-size: .8em;
+  color: #eee;
   display: inline-block;
-  background-color: #272822;
-  color: #FFF;
-  font-size: 14px;
-  vertical-align: bottom;
-  padding: 5px 10px;
+  background-color: #777;
+  padding: 2px 4px;
+  vertical-align: top;
 }
