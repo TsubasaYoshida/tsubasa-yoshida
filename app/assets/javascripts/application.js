@@ -13,12 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-$(function(){
-  var filename = $("p:contains('===')").text().replace('===', '');
-  $("p:contains('===')").replaceWith('<span class="filename">' + filename + '</span>');
-});
+//= require_tree .
