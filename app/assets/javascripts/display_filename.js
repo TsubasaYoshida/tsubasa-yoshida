@@ -1,5 +1,7 @@
 $(document).on('turbolinks:load', function(){
-  var filename = $("p:contains('===')").text().replace('===', '');
-  $("p:contains('===')").next().prepend('<span class="filename">' + filename + '</span>');
+  $("p:contains('===')").each(function(){
+    var filename = $(this).text().replace(/===/g, '');
+    $(this).next().prepend('<span class="filename">' + filename + '</span>');
+  });
   $("p:contains('===')").remove();
 });
