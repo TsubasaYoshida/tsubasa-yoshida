@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'bcl/index'
   resources :categories, only: [:index, :new, :edit, :create, :update, :destroy]
   resources :blogs do
     collection do

@@ -33,8 +33,10 @@
                 = link_to 'bookshelf', '#', class: 'nav-link'
               %li.nav-item.pt-1
                 = link_to 'blog', blogs_path, class: 'nav-link'
-              %li.nav-item.pt-1.mr-3
+              %li.nav-item.pt-1
                 = link_to 'contact', contact_path, class: 'nav-link'
+              %li.nav-item.pt-1.mr-3
+                = link_to 'bcl_follower', bcl_index_path, class: 'nav-link'
     %main.mb-5
       = yield
     %footer.text-center.mt-auto
