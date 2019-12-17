@@ -2,7 +2,6 @@ class BclController < ApplicationController
   skip_before_action :check_logined
 
   def index
-    puts Rails.application.credentials.twitter[:api_key]
     client = Twitter::REST::Client.new do |config|
       config.consumer_key = Rails.application.credentials.twitter[:api_key]
       config.consumer_secret = Rails.application.credentials.twitter[:api_secret_key]
