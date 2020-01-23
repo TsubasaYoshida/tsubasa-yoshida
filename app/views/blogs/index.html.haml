@@ -9,8 +9,9 @@
   - @blogs.each do |blog|
     .article
       .text-center.mt-5
-        %time
-          = l blog.created_at
+        %time.last-updated
+          last updated:
+          = l blog.updated_at
         %h2.mt-2
           = link_to blog.title, blog
         .mt-3

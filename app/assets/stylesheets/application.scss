@@ -96,6 +96,10 @@ pre {
   margin: 0 calc(50% - 50vw) 1rem;
 }
 
+.last-updated {
+  font-size: 11px;
+}
+
 /* 768px以上(iPad以上)の場合 */
 @media screen and (min-width: 768px) {
   .highlight {
