@@ -29,3 +29,5 @@
 # 今回はdatabase.ymlに機密情報を記載していないため、Git管理ファイルに含める
 # /config/database.yml
 /.idea/*
+
+coverage
