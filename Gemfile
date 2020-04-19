@@ -13,8 +13,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
-gem 'bootstrap'
+gem 'sassc'
+gem 'uglifier'
 gem 'jquery-rails'
+gem 'bootstrap'
 gem 'simple_form'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rouge'
